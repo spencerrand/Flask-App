@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belly Button Biodiversity</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/spacelab/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class = "container">
+        
+        <div class = "jumbotron" style = "text-align: center">
+            <h1>Belly Button Biodiversity Dashboard</h1>
+            <p>Explore the interactive charts below</p>
+        </div>
+    
+        <div class = "row align-items-start">
+            
+            <div class = "col-md-3">
+                <h3>Select Sample:</h3>
+                <select id = "selDataset" onchange = "optionChanged(this.value)">
+                </select>
+                <br><br>
+                <div class = "panel panel-default">
+                    <div class = "panel-heading">Sample Metadata</div>
+                    <div class = "panel-body" id = "panelMetadata"></div>
+                </div>
+            </div>
+            
+            <div class = "col-md-9 " id = "pie">
+            </div>
+        </div>
+
+        <div class = "row">       
+            <div class = "col-md-12" id = "bubble">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+
+</body>
